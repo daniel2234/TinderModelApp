@@ -14,6 +14,10 @@ class SwipeView: UIView {
     //lets us access the cardview instance
     private let card: CardView = CardView()
     
+    //its going to store the original location of the card and it will help with reset the original point
+    private var originalPoint:CGPoint?
+    
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
@@ -33,10 +37,23 @@ class SwipeView: UIView {
         self.backgroundColor = UIColor.clearColor()
         addSubview(card)
         
+        self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: "wasDragged:"))
+        
+        originalPoint = center
+        
         //do not want to use pre-defined constraints
         card.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         setConstraints()
+    }
+    
+    
+    func wasDragged(gestureRecognizer:UIPanGestureRecognizer){
+        let distance = gestureRecognizer.translationInView(self)
+        println("Distance x:\(distance.x) y:\(distance.y)")
+        //meveytime we drag we are gong to the cahnge the center of the swipeview
+        center = CGPointMake(originalPoint!.x + distance.x, originalPoint!.y + distance.y)
+        
     }
     
     private func setConstraints(){

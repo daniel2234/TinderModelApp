@@ -43,6 +43,8 @@ class CardView: UIView {
         layer.masksToBounds = true
         
         setConstraints()
+        
+        
     }
     
     //nslayout constrinat is the objct the applys its constraints in the imageview to the attribute
@@ -64,10 +66,11 @@ class CardView: UIView {
         //setting constraints for nameLabel
         //setting a constraints for x
         addConstraint(NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
+        //settings a constraint for y
         addConstraint(NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: imageView, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 10))
         //constraints for width
         addConstraint(NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: -10))
-        //
+        //constraints for height
         addConstraint(NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0))
         
     }
