@@ -53,7 +53,12 @@ class SwipeView: UIView {
         println("Distance x:\(distance.x) y:\(distance.y)")
         //meveytime we drag we are gong to the cahnge the center of the swipeview
         center = CGPointMake(originalPoint!.x + distance.x, originalPoint!.y + distance.y)
-        
+    }
+    
+    private func resetViewPositionAndTransformation(){
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.center = self.originalPoint!
+        })
     }
     
     private func setConstraints(){
