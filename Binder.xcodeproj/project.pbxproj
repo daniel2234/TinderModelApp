@@ -13,6 +13,9 @@
 		659C3B4D1B12C0C300066026 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659C3B4C1B12C0C300066026 /* Images.xcassets */; };
 		659C3B501B12C0C300066026 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659C3B4E1B12C0C300066026 /* LaunchScreen.xib */; };
 		659C3B5C1B12C0C300066026 /* BinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3B5B1B12C0C300066026 /* BinderTests.swift */; };
+		659C3B971B13A4A100066026 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3B961B13A4A100066026 /* CardView.swift */; };
+		659C3B991B13B82C00066026 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3B981B13B82B00066026 /* SwipeView.swift */; };
+		659C3B9B1B13C82D00066026 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3B9A1B13C82D00066026 /* CardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +32,16 @@
 		659C3B401B12C0C300066026 /* Binder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659C3B441B12C0C300066026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		659C3B451B12C0C300066026 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		659C3B471B12C0C300066026 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		659C3B471B12C0C300066026 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Binder/ViewController.swift; sourceTree = "<group>"; };
 		659C3B4A1B12C0C300066026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		659C3B4C1B12C0C300066026 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		659C3B4F1B12C0C300066026 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		659C3B551B12C0C300066026 /* BinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		659C3B5A1B12C0C300066026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		659C3B5B1B12C0C300066026 /* BinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderTests.swift; sourceTree = "<group>"; };
+		659C3B961B13A4A100066026 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		659C3B981B13B82B00066026 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwipeView.swift; path = Binder/SwipeView.swift; sourceTree = "<group>"; };
+		659C3B9A1B13C82D00066026 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,8 @@
 		659C3B371B12C0C300066026 = {
 			isa = PBXGroup;
 			children = (
+				659C3B9C1B13C83A00066026 /* ViewControllers */,
+				659C3B951B139DCD00066026 /* Views */,
 				659C3B421B12C0C300066026 /* Binder */,
 				659C3B581B12C0C300066026 /* BinderTests */,
 				659C3B411B12C0C300066026 /* Products */,
@@ -78,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				659C3B451B12C0C300066026 /* AppDelegate.swift */,
-				659C3B471B12C0C300066026 /* ViewController.swift */,
 				659C3B491B12C0C300066026 /* Main.storyboard */,
 				659C3B4C1B12C0C300066026 /* Images.xcassets */,
 				659C3B4E1B12C0C300066026 /* LaunchScreen.xib */,
@@ -110,6 +117,24 @@
 				659C3B5A1B12C0C300066026 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		659C3B951B139DCD00066026 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				659C3B981B13B82B00066026 /* SwipeView.swift */,
+				659C3B961B13A4A100066026 /* CardView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		659C3B9C1B13C83A00066026 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				659C3B9A1B13C82D00066026 /* CardsViewController.swift */,
+				659C3B471B12C0C300066026 /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +238,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				659C3B481B12C0C300066026 /* ViewController.swift in Sources */,
+				659C3B991B13B82C00066026 /* SwipeView.swift in Sources */,
+				659C3B9B1B13C82D00066026 /* CardsViewController.swift in Sources */,
+				659C3B971B13A4A100066026 /* CardView.swift in Sources */,
 				659C3B461B12C0C300066026 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +437,7 @@
 				659C3B611B12C0C300066026 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		659C3B621B12C0C300066026 /* Build configuration list for PBXNativeTarget "BinderTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +446,7 @@
 				659C3B641B12C0C300066026 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

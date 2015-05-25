@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.view.addSubview(CardView(frame: CGRectMake(80.0, 80.0, 120.0, 200.0)))
+//       self.view.addSubview(CardView(frame: CGRectMake(CGRectGetMidX(self.view.bounds) - 60.0, 80.0, 120.0, 200.0)))
     }
 
     override func didReceiveMemoryWarning() {
