@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8C27E95C-59D6-448F-BB70-DD6939ABB178</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Binder</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>407637D4EE1BD80DCAD82D03790FBBEB20C04A5A</key>
+		<string>https://github.com/daniel2234/TinderModelApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Binder.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>407637D4EE1BD80DCAD82D03790FBBEB20C04A5A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/daniel2234/TinderModelApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>407637D4EE1BD80DCAD82D03790FBBEB20C04A5A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>407637D4EE1BD80DCAD82D03790FBBEB20C04A5A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Binder</string>
+		</dict>
+	</array>
+</dict>
+</plist>
