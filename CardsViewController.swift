@@ -22,6 +22,8 @@ class CardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cardStackView.backgroundColor = UIColor.clearColor()
+        
         backCard = SwipeView(frame: createCardFrame(backCardTopMargin))
         cardStackView.addSubview(backCard!)
 
