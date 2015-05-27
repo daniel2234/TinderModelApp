@@ -20,12 +20,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="377"/>
+            <point key="canvasLocation" x="-364" y="395"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="szf-xM-pCe">
             <objects>
-                <viewController id="lWr-vf-DSA" customClass="LoginViewController" customModule="Binder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="lWr-vf-DSA" customClass="LoginViewController" customModule="Binder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jp8-f8-GJq"/>
                         <viewControllerLayoutGuide type="bottom" id="C2R-TK-jRy"/>
@@ -94,7 +94,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xB1-4c-FOj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="doE-fO-n9N" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CardsNavController" automaticallyAdjustsScrollViewInsets="NO" id="doE-fO-n9N" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mxo-IU-fPD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

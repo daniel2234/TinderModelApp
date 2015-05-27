@@ -35,6 +35,7 @@
 		659C3BC01B14CD3F00066026 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659C3BBF1B14CD3F00066026 /* ParseFacebookUtilsV4.framework */; };
 		659C3BC21B14CD5500066026 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659C3BC11B14CD5500066026 /* Bolts.framework */; };
 		659C3BC61B150E8800066026 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3BC51B150E8800066026 /* LoginViewController.swift */; };
+		659C3BCB1B165A4300066026 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3BCA1B165A4300066026 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		659C3BBF1B14CD3F00066026 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		659C3BC11B14CD5500066026 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		659C3BC51B150E8800066026 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		659C3BCA1B165A4300066026 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		659C3B371B12C0C300066026 = {
 			isa = PBXGroup;
 			children = (
+				659C3BC91B165A2D00066026 /* UserData */,
 				659C3B9C1B13C83A00066026 /* ViewControllers */,
 				659C3B951B139DCD00066026 /* Views */,
 				659C3B421B12C0C300066026 /* Binder */,
@@ -220,6 +223,14 @@
 				659C3B9F1B14BB5700066026 /* ParseFacebookUtils.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		659C3BC91B165A2D00066026 /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				659C3BCA1B165A4300066026 /* User.swift */,
+			);
+			name = UserData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				659C3B9B1B13C82D00066026 /* CardsViewController.swift in Sources */,
 				659C3B971B13A4A100066026 /* CardView.swift in Sources */,
 				659C3B461B12C0C300066026 /* AppDelegate.swift in Sources */,
+				659C3BCB1B165A4300066026 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

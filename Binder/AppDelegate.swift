@@ -22,8 +22,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("nOUbSjxviJchBTqmRTQ1noNZfthdVAhCHeuJDJwf",
             clientKey: "urpc7lE9tXNXVOB1p8YwrJq6w2xb95Xo7toP0imR")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
-//        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        return true
+        
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        
+        //needed and instance of storyboard to present a view controller to help redirect
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var initialViewController: UIViewController
+        
+        
+        //PFUser.currentUser() is just a convenience method we get from Parse when a user already exists.
+        if PFUser.currentUser() != nil{
+            initialViewController = storyboard.instantiateViewControllerWithIdentifier("CardsNavController") as! UIViewController
+        } else {
+            initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! UIViewController
+        }
+        
+        //this is to show where to start showing the dynamic view controller
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        
+        
+        
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     
@@ -47,12 +70,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        //activates the the first time its launched
         FBSDKAppEvents.activateApp()
         
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        //logs out the user when app is terminated
         PFFacebookUtils.facebookLoginManager().logOut()
     
     }
