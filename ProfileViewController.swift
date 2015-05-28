@@ -13,6 +13,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationItem.titleView = UIImageView(image: UIImage(named: "profile-header"))
+        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "nav-back-button"), style: UIBarButtonItemStyle.Plain, target: self, action: "goToCardViews:")
+        navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +39,8 @@ class ProfileViewController: UIViewController {
 
     }
     
-
+    func goToCardViews(button: UIBarButtonItem){
+        pageController.goToPreviousVC()
+    }
 
 }

@@ -24,6 +24,14 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
     var backCard:Card?
     var frontCard:Card?
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationItem.titleView = UIImageView(image: UIImage(named:"BINDER"))
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "nav-back-button"), style: UIBarButtonItemStyle.Plain, target: self, action: "goToProfile:")
+       navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: true)
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +47,11 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    //setup left bar button item to transition to the next screen
+    func goToProfile(button:UIBarButtonItem){
+        pageController.goToPreviousVC()
     }
     
     //created a helper function to get the size of the cards

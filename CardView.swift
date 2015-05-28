@@ -13,6 +13,7 @@ class CardView: UIView {
     private let imageView:UIImageView = UIImageView()
     private let nameLabel:UILabel = UILabel()
     
+    // if your creating througth storyboard
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()

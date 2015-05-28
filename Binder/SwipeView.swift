@@ -71,7 +71,8 @@ class SwipeView: UIView {
         case UIGestureRecognizerState.Changed:
             //everytime we drag we are gong to the cahnge the center of the swipeview
             
-        let rotationPercentage =  min(distance.x/(self.superview!.frame.width/2), 1)
+        let rotationPercentage =  min(distance.x / (self.superview!.frame.width/2), 1)
+        
         let rotationAngle = (CGFloat(2*M_PI/16) * rotationPercentage)
 
 //                transform = CGAffineTransformRotate(transform, rotationAngle)
@@ -101,7 +102,7 @@ class SwipeView: UIView {
             parentWidth *= -1
         }
         
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animateWithDuration(0.3, animations: {
         self.center.x = self.frame.origin.x + parentWidth
             
             }, completion: {
@@ -116,7 +117,6 @@ class SwipeView: UIView {
 //        UIView.animateWithDuration(0.2, animations: { () -> Void in
 //        })
     }
-    
     private func resetViewPositionAndTransformation(){
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.center = self.originalPoint!
@@ -125,6 +125,7 @@ class SwipeView: UIView {
     }
 
 }
+
 //added a protocol
 protocol SwipeViewDelegate:class{
     func swipeLeft()

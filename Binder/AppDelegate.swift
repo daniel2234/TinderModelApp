@@ -34,7 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //PFUser.currentUser() is just a convenience method we get from Parse when a user already exists.
         if currentUser() != nil{
-            initialViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileNavController") as! UIViewController
+            
+//            initialViewController = storyboard.instantiateViewControllerWithIdentifier("PageController") as! UIViewController
+            
+//            initialViewController = ViewController(transitionStyle:UIPageViewControllerTransitionStyle.Scroll,navigationOrientation:UIPageViewControllerNavigationOrientation.Horizontal, options:nil)
+            initialViewController = pageController
+            
         } else {
             initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! UIViewController
         }
