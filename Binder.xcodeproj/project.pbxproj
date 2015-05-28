@@ -36,6 +36,7 @@
 		659C3BC21B14CD5500066026 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659C3BC11B14CD5500066026 /* Bolts.framework */; };
 		659C3BC61B150E8800066026 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3BC51B150E8800066026 /* LoginViewController.swift */; };
 		659C3BCB1B165A4300066026 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3BCA1B165A4300066026 /* User.swift */; };
+		659C3BCD1B16671300066026 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C3BCC1B16671300066026 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		659C3BC11B14CD5500066026 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		659C3BC51B150E8800066026 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		659C3BCA1B165A4300066026 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		659C3BCC1B16671300066026 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				659C3B9A1B13C82D00066026 /* CardsViewController.swift */,
 				659C3B471B12C0C300066026 /* ViewController.swift */,
 				659C3BC51B150E8800066026 /* LoginViewController.swift */,
+				659C3BCC1B16671300066026 /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				659C3B9B1B13C82D00066026 /* CardsViewController.swift in Sources */,
 				659C3B971B13A4A100066026 /* CardView.swift in Sources */,
 				659C3B461B12C0C300066026 /* AppDelegate.swift in Sources */,
+				659C3BCD1B16671300066026 /* ProfileViewController.swift in Sources */,
 				659C3BCB1B165A4300066026 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -73,13 +73,14 @@ class LoginViewController: UIViewController {
                 var dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "mm/dd/yyyy"
                 user!["birthday"] = dateFormatter.dateFromString(d["birthday"] as! String)
-
+                
+                //download the picture into Parse
                 let pictureURL = ((d["picture"] as! NSDictionary)["data"] as! NSDictionary)["url"] as! String
                 let url = NSURL(string: pictureURL)
                 let request = NSURLRequest(URL: url!)
                 
                 NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
-                    let imageFile = PFFile(name: "Mario.jpg", data: data)
+                    let imageFile = PFFile(name: "ava.jpg", data: data)
                     user!["picture"] = imageFile
                     
                     user!.saveInBackgroundWithBlock({ (success, error) -> Void in

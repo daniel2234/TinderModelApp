@@ -74,8 +74,8 @@ class SwipeView: UIView {
         let rotationPercentage =  min(distance.x/(self.superview!.frame.width/2), 1)
         let rotationAngle = (CGFloat(2*M_PI/16) * rotationPercentage)
 
-                transform = CGAffineTransformRotate(transform, rotationAngle)
-//        transform = CGAffineTransformMakeRotation(rotationAngle)
+//                transform = CGAffineTransformRotate(transform, rotationAngle)
+        transform = CGAffineTransformMakeRotation(rotationAngle)
         
         center = CGPointMake(originalPoint!.x + distance.x, originalPoint!.y + distance.y)
         
@@ -113,8 +113,8 @@ class SwipeView: UIView {
         })
         
         //determine to animate to this to the animate left or right, we are going update the center of the swipeview
-        UIView.animateWithDuration(0.2, animations: { () -> Void in
-        })
+//        UIView.animateWithDuration(0.2, animations: { () -> Void in
+//        })
     }
     
     private func resetViewPositionAndTransformation(){

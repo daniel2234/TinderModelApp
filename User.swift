@@ -16,6 +16,21 @@ struct User{
     
     //we do not want other files access this, only our backend should know about this
     private let pfUser: PFUser
+    
+    //nested function for asynchrous connection
+    //supplying callback with data
+    //wait until we write the callback ourselves
+    func getPhoto(callback:(UIImage)->()){
+        let imageFile = pfUser.objectForKey("picture") as! PFFile
+        imageFile.getDataInBackgroundWithBlock { (data, error) -> Void in
+            //test for data to is there is any.
+            if let data = data{
+                //unwrap optional to call and instance of the photo
+                callback(UIImage(data: data)!)
+            }
+        }
+        
+    }
 }
 
 //returns user in this user instane
