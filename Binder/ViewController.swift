@@ -35,11 +35,11 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     func goToNextVC(){
-        let nextVC = pageViewController(self, viewControllerAfterViewController: viewControllers[0] as! UIViewController)!
+    let nextVC = pageViewController(self, viewControllerAfterViewController: viewControllers[0] as! UIViewController)!
         setViewControllers([nextVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
     func goToPreviousVC(){
-        let previousVC = pageViewController(self, viewControllerAfterViewController: viewControllers[0] as! UIViewController)!
+    let previousVC = pageViewController(self, viewControllerBeforeViewController: viewControllers[0] as! UIViewController)!
         setViewControllers([previousVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
     }
     
@@ -48,6 +48,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
         switch viewController{
         case cardsVC:
             return profilesVC
+        case profilesVC:
+            return nil
         default:
             return nil
         }
@@ -57,6 +59,8 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource {
         switch viewController{
         case profilesVC:
             return cardsVC
+        case cardsVC:
+            return nil
         default:
             return nil
         }

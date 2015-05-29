@@ -26,6 +26,8 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
     
     var users:[User]?
     
+    
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         navigationItem.titleView = UIImageView(image: UIImage(named:"BINDER"))
