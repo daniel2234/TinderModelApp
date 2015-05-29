@@ -46,4 +46,16 @@ func currentUser() -> User?{
     return nil
 }
 
+
 // I rewrote things a bit referring more clearly to PFUser versus User. Also is it important to notice that objectForKey is objective-C. Writing user.objectForKey("firstName") coincides with user["firstName"] if I recall properly. Hence we must explain to the compiler which kind of variable they are: swift Strings. Also worth mentioning: user.objectForKey("picture") does not refer to the original NSDictionary or you would have had to index down farther. It does refer to the PFUser instance which fields can be found as column names in parse. Last method below should be User? instead of User.
+
+func fetchUnViewedUsers(callback:([User])->()){
+    PFUser.query()!
+        .whereKey("objectId", notEqualTo: PFUser.currentUser()!.objectId!)
+        .findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if let pfUsers = objects as? [PFUser]{
+                let users = map(pfUsers,{pfUserToUser($0)})
+                callback(users)
+            }
+    }
+}

@@ -24,6 +24,8 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
     var backCard:Card?
     var frontCard:Card?
     
+    var users:[User]?
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         navigationItem.titleView = UIImageView(image: UIImage(named:"BINDER"))
@@ -42,6 +44,14 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
 
         frontCard = createCard(frontCardTopMargin)
         cardStackView.addSubview(frontCard!.swipeView)
+        
+        fetchUnViewedUsers(
+            {
+                returnedUsers in
+                self.users = returnedUsers
+                println(self.users)
+            }
+        )
     }
 
     override func didReceiveMemoryWarning() {
