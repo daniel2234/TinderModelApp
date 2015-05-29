@@ -13,6 +13,7 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
     struct Card {
         let cardView:CardView
         let swipeView:SwipeView
+        let user:User
     }
     
     //create the appearance of a stack, card from dynamic
@@ -39,28 +40,37 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         cardStackView.backgroundColor = UIColor.clearColor()
         
-        backCard = createCard(backCardTopMargin)
-        cardStackView.addSubview(backCard!.swipeView)
-
-        frontCard = createCard(frontCardTopMargin)
-        cardStackView.addSubview(frontCard!.swipeView)
+//        backCard = createCard(backCardTopMargin)
+//        cardStackView.addSubview(backCard!.swipeView)
+//
+//        frontCard = createCard(frontCardTopMargin)
+//        cardStackView.addSubview(frontCard!.swipeView)
         
-        fetchUnViewedUsers(
-            {
-                returnedUsers in
+        fetchUnViewedUsers{ returnedUsers in
                 self.users = returnedUsers
                 println(self.users)
+                
+                if let card = self.popCard(){
+                    //frame for card is not set because it is a constant of 0
+                    self.frontCard = card
+                    self.cardStackView.addSubview(self.frontCard!.swipeView)
+                }
+            if let users = self.users{
+                for user in users{
+                        if let card = self.popCard(){
+                            self.backCard = card
+                            self.backCard!.swipeView.frame = self.createCardFrame(self.backCardTopMargin)
+                            self.cardStackView.insertSubview(self.backCard!.swipeView, belowSubview: self.frontCard!.swipeView)
+                        }
+                    }
+                }
             }
-        )
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-    }
-    
     //setup left bar button item to transition to the next screen
     func goToProfile(button:UIBarButtonItem){
         pageController.goToPreviousVC()
@@ -71,12 +81,26 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
         return CGRect(x: 0, y: topMargin, width: cardStackView.frame.width, height: cardStackView.frame.height)
     }
     
-    private func createCard(topMargin:CGFloat) -> Card{
+    private func createCard(user:User) -> Card{
         let cardView = CardView()
-        let swipeView = SwipeView(frame: createCardFrame(topMargin))
+        cardView.name = user.name
+        user.getPhoto({
+            image in cardView.image = image
+        })
+        
+        
+        let swipeView = SwipeView(frame: createCardFrame(0))
         swipeView.delegate = self
         swipeView.innerView = cardView
-        return Card(cardView: cardView, swipeView: swipeView)        
+        return Card(cardView: cardView, swipeView: swipeView, user:user)
+    }
+    
+    
+    private func popCard() -> Card?{
+        if users != nil && users?.count > 0 {
+            return createCard(users!.removeLast())
+        }
+        return nil
     }
     
     
@@ -90,8 +114,8 @@ class CardsViewController: UIViewController, SwipeViewDelegate{
 
     func swipeRight() {
         println("Right")
-        if let backCard = backCard{
-            backCard.swipeView.removeFromSuperview()
+        if let frontCard = frontCard{
+            frontCard.swipeView.removeFromSuperview()
         }
     }
 }

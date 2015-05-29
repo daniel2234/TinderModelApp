@@ -12,7 +12,6 @@ import UIKit
 let pageController = ViewController(transitionStyle:UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options:nil)
 
 
-
 class ViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     //store instances of CardsNavController and ProfileNavController as constants to store them later

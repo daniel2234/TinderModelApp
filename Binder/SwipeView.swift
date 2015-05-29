@@ -23,6 +23,7 @@ class SwipeView: UIView {
         }
         
     }
+    
     //setup enum to track left or right
     enum Direction{
         case None
@@ -103,7 +104,7 @@ class SwipeView: UIView {
         }
         
         UIView.animateWithDuration(0.3, animations: {
-        self.center.x = self.frame.origin.x + parentWidth
+        self.center.x = self.center.x + 2 * parentWidth
             
             }, completion: {
                 success in
